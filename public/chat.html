@@ -3,29 +3,64 @@
   <head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chat | ChatApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/stylesheet.css">
   </head>
-  <body>
-    <!-- <div class="container">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please Enter a Room</h2>
-        <label for="inputUserName" class="sr-only">User Name</label>
-        <input type="text" id="inputUserName" class="form-control" placeholder="User Name" required autofocus>
-        <label for="inputRoom" class="sr-only">Room</label>
-        <input type="text" id="inputRoom" class="form-control" placeholder="Room" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-    </div> -->
+  <body class="chat">
+    <div class="chat__sidebar">
+      <h3>People</h3>
+    <div id="users"></div>
+    </div>
 
-    <h1>Welcome to the Chat App</h1>
+    <div class="chat__main">
+      <ol class="chat__messages" id="messages"></ol>
 
+      <div class="chat__footer">
+        <form id="message-form">
+          <input name="message" type="text" placeholder="Message" autofocus autocomplete="off"/>
+          <button>Send</button>
+
+        </form>
+        <button id="send-location">Location</button>
+
+      </div>
+
+    </div>
+
+    <script id="message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div class="message__body">
+        <div>
+          <p>{{text}}</P>
+        </div>
+      </li>
+    </script>
+
+    <script id="location-message-template" type="text/template">
+      <li class="message">
+        <div class="message__title">
+          <h4>{{from}}</h4>
+          <span>{{createdAt}}</span>
+        </div>
+        <div class="message__body">
+          <p>
+            <a href="{{url}}" target="_blank">My Current location
+          </P>
+        </div>
+      </li>
+    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.1.1.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/chat.js"></script>
   </body>
 </html>
