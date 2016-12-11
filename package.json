@@ -21,13 +21,4 @@
     "mocha": "^3.0.2",
     "nodemon": "^1.11.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BloodRose86/node-chat-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BloodRose86/node-chat-app/issues"
-  },
-  "homepage": "https://github.com/BloodRose86/node-chat-app#readme",
-  "description": ""
 }
