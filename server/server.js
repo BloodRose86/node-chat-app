@@ -1,6 +1,6 @@
 const path = require('path');
 const http = require('http');
-const express = require('express');
+const express = require('express'); //webserver
 const socketIO = require('socket.io');
 
 const {generateMessage, generateLocationMessage} = require('./utils/message');
