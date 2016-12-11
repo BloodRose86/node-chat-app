@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('createLocationMessage', (coords) => {
-      io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
+      io.emit('newLocationMessage', generateLocationMessage('Admin',coords.latitude, coords.longitude));
     });
 
     socket.on('disconnect', () => {
@@ -36,5 +36,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(port, () =>{
-    console.log(`Server is up on port ${port}`);
+    console.log(`Server is up on port: ${port}`);
 });
